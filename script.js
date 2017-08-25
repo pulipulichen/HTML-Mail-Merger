@@ -1,5 +1,10 @@
 var _main = function () {
-    console.log("ok");
+    var _csv_string = $("#inpu_csv_file_textarea").val();
+    //console.log(_csv_string);
+    var _csv = csv_string_parse(_csv_string);
+    var _template = $("#inpu_html_file_textarea").val();
+    
+    console.log(_csv);
 };
 
 // ------------------------------------------------------
