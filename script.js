@@ -4,7 +4,55 @@ var _main = function () {
     var _csv = csv_string_parse(_csv_string);
     var _template = $("#inpu_html_file_textarea").val();
     
-    console.log(_csv);
+    // ------------------------
+    
+    var _file_data = [];
+    
+    for (var _i in _csv) {
+        var _row = _csv[_i];
+        var _file_content = _template;
+        var _file_name = _i + ".html";
+        
+        for (var _field_name in _row) {
+            var _field_value = _row[_field_name];
+            
+            if (_field_name === "filename") {
+                _file_name = _field_value;
+                if (_file_name.endsWith(".html") === false 
+                        && _file_name.endsWith(".htm") === false) {
+                    _file_name = _file_name + ".html";
+                }
+            }
+            
+            var _field_name = "{" + _field_name + "}";
+            
+            _file_content = _file_content.split(_field_name).join(_field_value);
+        }
+        
+        _file_data.push({
+            filename: _file_name,
+            content: _file_content
+        });
+    }
+    
+    //console.log(_file_data);
+    //return;
+    // ------------------------
+    
+    var zip = new JSZip();
+    //zip.file("Hello.txt", "Hello World\n");
+    //zip.file("Hello2.txt", "Hello World\n");
+    for (var _i in _file_data) {
+        zip.file(_file_data[_i].filename, _file_data[_i].content);
+    }
+    
+    var _zip_name = "template-" + generate_time_string() + ".zip";
+    
+    zip.generateAsync({type: "blob"})
+            .then(function (content) {
+                // see FileSaver.js
+                saveAs(content, _zip_name);
+            });
 };
 
 // ------------------------------------------------------
@@ -210,7 +258,7 @@ var _download_file = function (data, filename, type) {
 };
 
 $(function () {
-    setTimeout(function () {
-        _main();
-    }, 3000);
+    //setTimeout(function () {
+    //    _main();
+    //}, 3000);
 });

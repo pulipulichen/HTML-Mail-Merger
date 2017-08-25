@@ -1,5 +1,5 @@
 csv_string_parse = function (_csv_string) {
-    var _csv = Papa.parse(_csv_string);
+    var _csv = Papa.parse(_csv_string.trim());
     _csv = _csv.data;
     //console.log(_csv);
     var _data = [];
