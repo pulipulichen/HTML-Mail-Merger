@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
+Semantic UI: https://semantic-ui.com/elements/button.html
 -->
 <html>
     <head>
@@ -27,82 +25,40 @@ and open the template in the editor.
 
 <form class="file-process-framework ui form">
 
-  <div class="ui two column doubling grid">
+  <div class="ui">
     <div class="column">
 	<div class="ui segment">
 	
     
-<h1 class="ui horizontal divider header">
+<h1 class="ui horizontal divider header" style="display: none;">
   Input
 </h1>
 
 
 <!-- --------------------------------- -->
 
-<div class="ui bottom attached active tab segment input-field-container" data-tab="textarea">
-    
+<!-- <div class="ui bottom attached active tab segment input-field-container" data-tab="textarea"> -->
+<div>    
     <!-- https://apps.lazza.dk/facebook/ -->
   
     <div class="field">
-        <label for="input_u">網址 (必填，必須使用可公開連線的網址，不可用localhost等區域網路)</label>
-        <input type="text" class="input-field focus_select share-custom-parameters" 
-               id="input_u" 
-               value="http://blog.pulipuli.info/" 
-               placeholder="請輸入以 http:// 開頭的網址" />
-    </div>
-    
-    <hr />
-    <div class="field">
-        以下為選填資料：
+        <label for="input_csv_file">CSV file: </label>
+        <input type="file" class="input-field" 
+               id="input_csv_file" load_content_to="#inpu_csv_file_textarea" />
+        <textarea id="inpu_csv_file_textarea"></textarea>
     </div>
     
     <div class="field">
-        <label for="input_quote">引言 (quote)</label>
-        <input type="text" class="input-field focus_select share-custom-parameters" 
-               id="input_quote" 
-               value="這個布丁是在無聊的世界中找尋樂趣的
-一種不能吃的食物，喜愛動漫畫、遊戲、程式，以及跟世間脫節的生活步調。 (quote)" 
-               placeholder="請輸入引言" />
+        <label for="input_html_file">HTML file: </label>
+        <input type="file" class="input-field" 
+               id="input_html_file" load_content_to="#inpu_html_file_textarea" />
+        <textarea id="inpu_html_file_textarea"></textarea>
     </div>
     
     <div class="field">
-        <label for="input_picture">網址圖片的網址 (picture)</label>
-        <input type="text" class="input-field focus_select share-custom-parameters" 
-               id="input_picture"  
-               value="http://lh3.googleusercontent.com/-6qwdHih3tFk/Vv6N0dTaICI/AAAAAAACuRA/AsKTNm9c_Bg/s0/post-avatar.png" 
-               placeholder="請輸入以 http:// 開頭的網址圖片網址" />
-    </div>
-    
-    <div class="field">
-        <label for="input_title">分享網址的標題 (title)</label>
-        <input type="text" class="input-field focus_select share-custom-parameters" 
-               id="input_title"  
-               value="我分享「布丁布丁吃什麼？」給你！(title)" 
-               placeholder="請輸入分享網址的標題" />
-    </div>
-    
-    <div class="field">
-        <label for="input_description">網址介紹 (description)</label>
-        <input type="text" class="input-field focus_select share-custom-parameters" 
-               id="input_description"  
-               value="布丁布丁吃布丁分享網頁技術、讀書心得的園地。 (description)" 
-               placeholder="請輸入網址介紹" />
-    </div>
-    
-    <div class="field">
-        <label for="input_caption">網站標題 (caption)</label>
-        <input type="text" class="input-field focus_select share-custom-parameters" 
-               id="input_caption"  
-               value="布丁布丁吃什麼？ (caption)" 
-               placeholder="請輸入網站標題" />
-    </div>
-    
-    <div class="field">
-        <label for="input_button">分享按鈕文字</label>
-        <input type="text" class="input-field focus_select" 
-               id="input_button"  
-               value="分享" 
-               placeholder="請輸入分享按鈕的文字" />
+        <button type="button" class="fluid ui teal button">
+            Generate
+        </button>
     </div>
     
 </div>
@@ -113,7 +69,7 @@ and open the template in the editor.
 	</div> <!-- <div class="column"> -->
   <!-- -------------------------------------- -->
   
-    <div class="column">
+  <div class="column" style="display: none;">
   <div class="ui segment display-result" style="">
   <!-- <div class="display-result"> -->
   
