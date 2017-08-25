@@ -1,73 +1,6 @@
-
-var _combine_input = function () {
-	// 開頭設定
-	var _result = "https://www.facebook.com/sharer/sharer.php?";
-        var _panel = $(".file-process-framework");
-	
-        
-	// ------------------------------------------
-        // 資料處理設定
-        var _data = [];
-        _panel.find(".share-custom-parameters").each(function (_i, _ele) {
-            var _val = _ele.value.trim();
-            if (_val !== "") {
-                var _key = _ele.id.replace("input_", "");
-                _data.push(_key+"="+encodeURIComponent(_val));
-            }
-        });
-        
-        _result = _result + _data.join("&");
-        
-        var _option = 'toolbar=0,status=0';
-        
-        _result = 'javascript:window.open("' + _result + '", "_blank", "' + _option + '")';
-        
-        // ------------------------------------------
-	// 結束設定
-        
-	var _input = _panel.find("#preview");
-	_input.val(_result);
-
-        var _result_html = $('<div><a>'
-            //+ '分享到Facebook' 
-            + '<img src="https://pulipulichen.github.io/blog-pulipuli-info-data-2017/04/facebook-share/facebook-logo-white.svg" width="13" height="13" /> '
-            //+ "分享"
-            + $("#input_button").val().trim()
-            + '</a></div>');
-        _result_html.css({
-            "background-color": "#5D7DAE",
-            //"height": "24px",
-            //"width": "80px",
-            "border-radius": "6px",
-            "display": "inline-block"
-        });
-        
-        _result_html.find("a img").css({
-            "margin-top": '3px',
-            "margin-bottom": '-2px',
-        });
-        
-        _result_html.find("a").css({
-            'font-size':'13px',
-            'font-weight':'bold',
-            'text-align':'center',
-            'color':'#fff',
-            'border':'1px solid #FFF',
-            //'background-color':'#5D7DAE',
-            'padding':'2px 10px',
-            'cursor':'pointer',
-            'text-decoration':'none',
-            //'width':'80px',
-            'display':'block'
-        });
-        
-        _result_html.find("a").attr("href", _result);
-	_panel.find("#preview_html").html(_result_html);
-        var _div = $("<div></div>");
-        _result_html.clone().appendTo(_div);
-        _panel.find("#preview_html_source").val(_div.html());
-        
-};	// var _combine_input = function () {
+var _main = function () {
+    console.log("ok");
+};
 
 // ------------------------------------------------------
 
@@ -272,4 +205,7 @@ var _download_file = function (data, filename, type) {
 };
 
 $(function () {
+    setTimeout(function () {
+        _main();
+    }, 3000);
 });

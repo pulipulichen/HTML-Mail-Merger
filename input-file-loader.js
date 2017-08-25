@@ -35,6 +35,6 @@ $(function () {
 
         reader.readAsText(evt.target.files[0]);
     });
+    
 });
-
 

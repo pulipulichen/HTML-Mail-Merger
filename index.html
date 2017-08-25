@@ -20,6 +20,8 @@ Semantic UI: https://semantic-ui.com/elements/button.html
 <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
 
 <script src="input-file-loader.js"></script>
+<script src="textarea-load-field-init.js"></script>
+<script src="papaparse.min.js"></script>
 <script src="script.js"></script>
 
 <!-- ------------------------------------------------------------ -->
@@ -43,21 +45,21 @@ Semantic UI: https://semantic-ui.com/elements/button.html
     <!-- https://apps.lazza.dk/facebook/ -->
   
     <div class="field">
-        <label for="input_csv_file">CSV file: </label>
+        <label for="input_csv_file">CSV file: (<a href="data.csv" download>example</a>) </label>
         <input type="file" class="input-field" 
                id="input_csv_file" load_content_to="#inpu_csv_file_textarea" />
-        <textarea id="inpu_csv_file_textarea"></textarea>
+        <textarea id="inpu_csv_file_textarea" load_file_init="data.csv"></textarea>
     </div>
     
     <div class="field">
-        <label for="input_html_file">HTML file: </label>
+        <label for="input_html_file">HTML file: (<a href="template.html" download>example</a>)  </label>
         <input type="file" class="input-field" 
                id="input_html_file" load_content_to="#inpu_html_file_textarea" />
-        <textarea id="inpu_html_file_textarea"></textarea>
+        <textarea id="inpu_html_file_textarea" load_file_init="template.html"></textarea>
     </div>
     
     <div class="field">
-        <button type="button" class="fluid ui teal button">
+        <button type="button" class="fluid ui teal button" onclick="_main();">
             Generate
         </button>
     </div>
