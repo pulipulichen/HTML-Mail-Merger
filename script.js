@@ -272,26 +272,4 @@ var _download_file = function (data, filename, type) {
 };
 
 $(function () {
-  var _panel = $(".file-process-framework");
-  _panel.find(".input-mode.textarea").click(_load_textarea).keyup(_load_textarea);
-  _panel.find(".myfile").change(_load_file);
-  _panel.find(".download-file").click(_download_file_button);
-  _panel.find(".input-field").change(_combine_input);
-  
-  _panel.find(".focus_select").focus(function () {
-      $(this).select();
-  });
-  
-  //$('.menu .item').tab();
-  
-  
-  $('#copy_source_code').click(function () {
-      PULI_UTIL.clipboard.copy($("#preview").val());
-  });
-  
-  $('#copy_source_code_html').click(function () {
-      PULI_UTIL.clipboard.copy($("#preview_html_source").val());
-  });
-  
-  _combine_input();
 });
